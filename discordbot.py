@@ -25,9 +25,8 @@ class MyBot(commands.AutoShardedBot):
             self.load_extension(f"cogs.help")
         except commands.ExtensionAlreadyLoaded:
             pass
-        
+
     async def on_ready(self):
-        print(f"{os.path.basename(__file__)} total_shard:{self.shard_count}")
         return await self.change_presence(activity=Game(name=f"{prefix}helpのみ使用可能 | {len(self.guilds)}guilds", type=1))
     
     async def on_guild_join(self, _):
