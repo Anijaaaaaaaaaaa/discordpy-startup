@@ -21,6 +21,10 @@ class MyBot(commands.AutoShardedBot):
     def __init__(self):
         super().__init__(command_prefix=commands.when_mentioned_or("::"), loop=loop, case_insensitive=True)
         self.remove_command('help')
+        try:
+            self.load_extension(f"cogs.help")
+        except commands.ExtensionAlreadyLoaded:
+            pass
         
     async def on_ready(self):
         print(f"{os.path.basename(__file__)} total_shard:{self.shard_count}")
