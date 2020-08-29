@@ -7,7 +7,7 @@ from discord import Game, Embed
 from discord.ext import commands
 
 
-token = os.environ['TOKEN']
+token, prefix = os.environ['TOKEN'], "::"
 loop = new_event_loop()
 
 async def run():
@@ -19,7 +19,7 @@ async def run():
 
 class MyBot(commands.AutoShardedBot):
     def __init__(self):
-        super().__init__(command_prefix=commands.when_mentioned_or("::"), loop=loop, case_insensitive=True)
+        super().__init__(command_prefix=commands.when_mentioned_or(prefix), loop=loop, case_insensitive=True)
         self.remove_command('help')
         try:
             self.load_extension(f"cogs.help")
