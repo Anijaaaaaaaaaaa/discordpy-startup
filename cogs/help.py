@@ -9,6 +9,7 @@ class helps(commands.Cog):
         self.bot = bot
 
     @commands.command(name='help')
+    @commands.bot_has_permissions(read_messages=True, send_messages=True, embed_links=True, add_reactions=True, manage_messages=True, read_message_history=True)
     async def helps(self, ctx):
         invite = {"TAOの招待": "https://tukisima.com/invite", "BOT専用-TAOの招待": "https://discordapp.com/api/oauth2/authorize?client_id=695288604829941781&permissions=3533888&scope=bot"}
         web = {"TAOのWEB": "https://tukisima.com", "TAO寄付サイト": "https://taqooto.wixsite.com/tao-donate", "TAO公式Wiki": "https://wiki3.jp/discord_tao"}
