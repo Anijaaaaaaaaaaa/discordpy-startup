@@ -8,8 +8,8 @@ class helps(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def help(self, ctx):
+    @commands.command(name='help')
+    async def helps(self, ctx):
         invite = {"TAOの招待": "https://tukisima.com/invite", "BOT専用-TAOの招待": "https://discordapp.com/api/oauth2/authorize?client_id=695288604829941781&permissions=3533888&scope=bot"}
         web = {"TAOのWEB": "https://tukisima.com", "TAO寄付サイト": "https://taqooto.wixsite.com/tao-donate", "TAO公式Wiki": "https://wiki3.jp/discord_tao"}
         discord = {"公式鯖の招待": "https://discord.gg/d7Qqfhy", "ログ鯖の招待": "https://discord.gg/VHuzWKv", "絵師鯖の招待": "https://discord.gg/qdVsWjE"}
