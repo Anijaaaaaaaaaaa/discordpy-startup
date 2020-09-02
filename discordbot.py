@@ -29,6 +29,13 @@ class MyBot(commands.AutoShardedBot):
     async def on_ready(self):
         return await self.change_presence(activity=Game(name=f"{prefix}helpのみ使用可能 | {len(self.guilds)}guilds", type=1))
     
+    async def on_message(self, message):
+        if message.channel.id in [668071116878643212, 721706454935011389, 668071221165817894, 688679140915937293, 694956814927921213, 750656481124417567]:
+            return await message.publish()
+        
+        if message.content == f"{prefix}help":
+            await self.process_commands(message)
+            
     async def on_guild_join(self, _):
         return await self.change_presence(activity=Game(name=f"{prefix}helpのみ使用可能 | {len(self.guilds)}guilds", type=1))
             
