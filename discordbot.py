@@ -11,6 +11,7 @@ token, prefix = os.environ['TOKEN'], "::"
 loop = new_event_loop()
 
 async def run():
+    return
     bot = MyBot()
     try:
         await bot.start(token)
